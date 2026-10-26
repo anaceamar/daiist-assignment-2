@@ -14,3 +14,7 @@ runs/
 
 # Never commit your API key
 .env
+
+# COCO checkpoint Ultralytics downloads on first use
+/yolo11n.pt
+/yolo11s.pt
