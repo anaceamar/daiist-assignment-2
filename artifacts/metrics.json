@@ -1,0 +1,138 @@
+{
+  "classes": [
+    "bee",
+    "varroa"
+  ],
+  "positive_class": "varroa",
+  "positive_id": 1,
+  "dataset": {
+    "workspace": "varroa-j8231",
+    "project": "varroa3k",
+    "version": 1
+  },
+  "training": {
+    "base_model": "yolo11n.pt",
+    "epochs": 60,
+    "imgsz": 640,
+    "batch": 16,
+    "device": "0"
+  },
+  "per_class_test": [
+    {
+      "class": "bee",
+      "precision": 0.9962,
+      "recall": 1.0,
+      "ap50": 0.995,
+      "ap50_95": 0.6691
+    },
+    {
+      "class": "varroa",
+      "precision": 0.7955,
+      "recall": 0.7574,
+      "ap50": 0.8029,
+      "ap50_95": 0.3081
+    }
+  ],
+  "overall_test": {
+    "map50": 0.899,
+    "map50_95": 0.4886
+  },
+  "baselines_object_level": {
+    "coco_zero_shot": {
+      "map50": 0.0,
+      "note": "COCO has no bee or varroa class, so no prediction can match a label"
+    },
+    "predict_nothing": {
+      "map50": 0.0,
+      "recall": 0.0
+    }
+  },
+  "image_level_test": {
+    "test_images": 300,
+    "test_positive_images": 150,
+    "auc_finetuned": 0.9367,
+    "auc_coco_zero_shot": 0.414,
+    "auc_predict_nothing": 0.5
+  },
+  "costs": {
+    "fn": 60.0,
+    "fp": 10.0,
+    "tp": 13.0,
+    "tn": 0.0,
+    "review": 0.15,
+    "base_rate": 0.05,
+    "human_recall": 0.95,
+    "human_specificity": 0.98,
+    "images_per_day": 2000,
+    "review_seconds": 20,
+    "review_hours_per_person": 6,
+    "reviewers_available": 1
+  },
+  "chosen": {
+    "single_threshold": 0.46,
+    "band_lo": 0.06,
+    "band_hi": 0.52,
+    "chosen_on": "validation",
+    "review_capacity_share": 0.54
+  },
+  "alternatives_test": {
+    "do_nothing": {
+      "lo": 1.01,
+      "hi": 1.01,
+      "cost_per_1000": 3000.0,
+      "review_share": 0.0,
+      "review_cases_per_day": 0.0,
+      "review_hours_per_day": 0.0,
+      "people_needed": 0.0,
+      "recall_pos": 0.0,
+      "false_alarm_rate": 0.0,
+      "note": "every image passes"
+    },
+    "person_checks_everything": {
+      "lo": 0.0,
+      "hi": 1.01,
+      "cost_per_1000": 1107.5000000000005,
+      "review_share": 1.0,
+      "review_cases_per_day": 2000.0,
+      "review_hours_per_day": 11.11,
+      "people_needed": 1.85,
+      "recall_pos": 0.0,
+      "false_alarm_rate": 0.0,
+      "note": "every image reviewed"
+    },
+    "model_alone": {
+      "lo": 0.46,
+      "hi": 0.46,
+      "cost_per_1000": 1862.3333333333335,
+      "review_share": 0.0,
+      "review_cases_per_day": 0.0,
+      "review_hours_per_day": 0.0,
+      "people_needed": 0.0,
+      "recall_pos": 0.7266666666666667,
+      "false_alarm_rate": 0.06
+    },
+    "model_plus_review": {
+      "lo": 0.06,
+      "hi": 0.52,
+      "cost_per_1000": 1009.0500000000002,
+      "review_share": 0.4126666666666667,
+      "review_cases_per_day": 825.3,
+      "review_hours_per_day": 4.59,
+      "people_needed": 0.76,
+      "recall_pos": 0.46,
+      "false_alarm_rate": 0.013333333333333334
+    },
+    "coco_zero_shot_alone": {
+      "lo": 0.81,
+      "hi": 0.81,
+      "cost_per_1000": 3000.0,
+      "review_share": 0.0,
+      "review_cases_per_day": 0.0,
+      "review_hours_per_day": 0.0,
+      "people_needed": 0.0,
+      "recall_pos": 0.0,
+      "false_alarm_rate": 0.0,
+      "note": "threshold picked on test: an upper bound"
+    }
+  }
+}
