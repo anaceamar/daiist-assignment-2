@@ -1,0 +1,9 @@
+{
+  "search_design": "structure",
+  "embed_model": "gemini-embedding-2",
+  "embed_dim": 768,
+  "designs": {
+    "fixed": "250-word windows, 50 overlap",
+    "structure": "legal units, split at paragraphs above 300 words"
+  }
+}

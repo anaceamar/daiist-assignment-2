@@ -1,0 +1,77 @@
+{
+  "air-261-2004": {
+    "title": "Regulation (EC) No 261/2004 - air passenger rights (denied boarding, cancellation, delay)",
+    "mode": "air",
+    "file": "air-261-2004.html",
+    "sha256": "eb282e7af0c2a45a2b252a3dd5745ec2c2b7002483384f9cf5ac309754057a41",
+    "added": false,
+    "celex": "32004R0261",
+    "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32004R0261",
+    "units": 44,
+    "words": 4055,
+    "chunks": {
+      "fixed": 21,
+      "structure": 47
+    }
+  },
+  "air-guidelines-2024": {
+    "title": "Commission Interpretative Guidelines on Regulation 261/2004 (C/2024/5687)",
+    "mode": "air",
+    "file": "air-guidelines-2024.html",
+    "sha256": "0ece2a949a42ccc382ac6ea8e3c4a808a7b72332d1637a084fcb1811c02f5c60",
+    "added": false,
+    "celex": "52024XC05687",
+    "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024XC05687",
+    "units": 64,
+    "words": 18195,
+    "chunks": {
+      "fixed": 91,
+      "structure": 99
+    }
+  },
+  "rail-2021-782": {
+    "title": "Regulation (EU) 2021/782 - rail passengers' rights and obligations",
+    "mode": "rail",
+    "file": "rail-2021-782.html",
+    "sha256": "c96e2d1d0be6850e638c20b7be002fefa10661a55257a3f9228e9ce3e76e22e2",
+    "added": false,
+    "celex": "32021R0782",
+    "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0782",
+    "units": 158,
+    "words": 22342,
+    "chunks": {
+      "fixed": 112,
+      "structure": 179
+    }
+  },
+  "bus-181-2011": {
+    "title": "Regulation (EU) No 181/2011 - bus and coach passenger rights",
+    "mode": "bus",
+    "file": "bus-181-2011.html",
+    "sha256": "18ec64f5ab44b1de1cfab41104f00243af9db168d7211a66c93a28057a1869cd",
+    "added": false,
+    "celex": "32011R0181",
+    "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32011R0181",
+    "units": 64,
+    "words": 6822,
+    "chunks": {
+      "fixed": 34,
+      "structure": 70
+    }
+  },
+  "sea-1177-2010": {
+    "title": "Regulation (EU) No 1177/2010 - rights of passengers travelling by sea and inland waterway",
+    "mode": "sea",
+    "file": "sea-1177-2010.html",
+    "sha256": "59fcef058d5319dc46c3ed5a22c7f7e2cc11f282c1eddf97a05b01327b355148",
+    "added": false,
+    "celex": "32010R1177",
+    "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010R1177",
+    "units": 65,
+    "words": 8102,
+    "chunks": {
+      "fixed": 41,
+      "structure": 71
+    }
+  }
+}

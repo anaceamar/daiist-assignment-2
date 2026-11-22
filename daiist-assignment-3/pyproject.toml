@@ -1,0 +1,26 @@
+[project]
+name = "daiist-assignment3"
+version = "0.1.0"
+description = "Assignment 3: a RAG system exposed as an MCP tool, a subagent and an agent, evaluated end to end"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "google-genai>=1.50",
+    "chromadb>=1.3",
+    "pypdf>=6.0",
+    "beautifulsoup4>=4.13",
+    "httpx>=0.28.1",
+    "mcp[cli]>=2.3.0",
+    "langchain>=1.4.7",
+    "langchain-google-genai>=4.4.2",
+    "numpy>=2.0",
+    "pandas>=2.2",
+    "matplotlib>=3.9",
+    "nbconvert>=7.16",
+    "ipykernel>=6.29",
+]
+
+[tool.uv]
+required-environments = [
+    "sys_platform == 'darwin' and platform_machine == 'arm64'",
+    "sys_platform == 'win32' and platform_machine == 'AMD64'",
+]

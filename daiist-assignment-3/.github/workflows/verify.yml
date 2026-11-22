@@ -1,0 +1,34 @@
+# Manual only, on purpose.
+#
+# This never runs by itself. You start it yourself from the Actions tab when
+# you want a check, which also means it always runs in YOUR fork, where your
+# own GEMINI_API_KEY secret is available. (GitHub deliberately withholds
+# secrets from workflows triggered by a pull request from a fork, so an
+# automatic PR check could never have worked here anyway.)
+#
+# It runs exactly the same thing as `uv run python check.py` on your laptop.
+name: Verify Assignment 3
+
+on:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Run the submission self-check
+        run: uv run python check.py

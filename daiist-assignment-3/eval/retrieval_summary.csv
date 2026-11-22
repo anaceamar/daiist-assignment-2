@@ -1,0 +1,5 @@
+design,hit@1,hit@3,hit@5,mrr@5,multi_both_in_top5,words@1,words@3,words@5
+fixed,0.686,0.914,0.971,0.808,0.714,250,750,1250
+structure,0.914,0.943,0.943,0.929,0.714,216,588,976
+structure-hybrid,0.629,0.829,0.857,0.726,0.571,221,635,1013
+structure-hybrid-mode,0.6,0.829,0.886,0.718,0.571,218,621,1013

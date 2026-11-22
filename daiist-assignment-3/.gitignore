@@ -1,0 +1,17 @@
+.DS_Store
+__pycache__/
+.venv/
+.pytest_cache/
+.ipynb_checkpoints/
+*.pyc
+
+# Documents downloaded by your index stage. Commit them only if their licence allows it.
+corpus/
+
+# Your index belongs in index/, committed. Your evaluation results belong in eval/, committed.
+
+# Never commit your API key
+.env
+
+# Temporary files written while saving the index
+index/*.tmp
