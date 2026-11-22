@@ -1,0 +1,108 @@
+{
+  "retrieval": [
+    {
+      "design": "fixed",
+      "hit@1": 0.686,
+      "hit@3": 0.914,
+      "hit@5": 0.971,
+      "mrr@5": 0.808,
+      "multi_both_in_top5": 0.714,
+      "words@1": 250,
+      "words@3": 750,
+      "words@5": 1250
+    },
+    {
+      "design": "structure",
+      "hit@1": 0.914,
+      "hit@3": 0.943,
+      "hit@5": 0.943,
+      "mrr@5": 0.929,
+      "multi_both_in_top5": 0.714,
+      "words@1": 216,
+      "words@3": 588,
+      "words@5": 976
+    },
+    {
+      "design": "structure-hybrid",
+      "hit@1": 0.629,
+      "hit@3": 0.829,
+      "hit@5": 0.857,
+      "mrr@5": 0.726,
+      "multi_both_in_top5": 0.571,
+      "words@1": 221,
+      "words@3": 635,
+      "words@5": 1013
+    },
+    {
+      "design": "structure-hybrid-mode",
+      "hit@1": 0.6,
+      "hit@3": 0.829,
+      "hit@5": 0.886,
+      "mrr@5": 0.718,
+      "multi_both_in_top5": 0.571,
+      "words@1": 218,
+      "words@3": 621,
+      "words@5": 1013
+    }
+  ],
+  "search_design": "structure",
+  "best_design_by_hit@3": "structure",
+  "end_to_end": {
+    "questions": 42,
+    "answered_by_agent": 42,
+    "graded": 42,
+    "correct": 36,
+    "correct_answerable": 33,
+    "answerable": 35,
+    "unsupported": 2,
+    "correct_refusals": 3,
+    "unanswerable": 7,
+    "answered_unanswerable": 4,
+    "wrong_refusals": 0,
+    "citations_valid": 42,
+    "guardrail_fired": [
+      "q23",
+      "q36",
+      "q38",
+      "q42"
+    ]
+  },
+  "agreement": {
+    "graded": 0,
+    "correct": {
+      "n": 0,
+      "agreement": null,
+      "kappa": null,
+      "disagreements": []
+    },
+    "supported": {
+      "n": 0,
+      "agreement": null,
+      "kappa": null,
+      "disagreements": []
+    }
+  },
+  "failure_causes": {
+    "retrieval miss": 1,
+    "wrong answer from right passage": 1,
+    "unsupported claim": 4
+  },
+  "cost": {
+    "tokens_in_per_question": 4754,
+    "tokens_out_per_question": 235,
+    "seconds_per_question": 4.4,
+    "model_calls_per_question": 2.12,
+    "searches_per_question": 1.14,
+    "usd_per_question_at_list_price": 0.00201,
+    "price_assumption_usd_per_million": {
+      "input": 0.3,
+      "output": 2.5
+    }
+  },
+  "judge_model": "gemini-3.5-flash-lite",
+  "before_after": {
+    "id": "q36",
+    "before": "The documents I have do not cover this. The provided search results only contain information regarding notification requirements for rail [rail-2021-782, Article 24], bus and coach [bus-181-2011, Article 14], and sea and inland waterway travel [sea-1177-2010, Article 11].",
+    "after": "To ensure assistance at the airport, a passenger with reduced mobility should notify the air carrier, their agent, or the tour operator at least **48 hours before the published departure time** of the flight [air-prm-1107-2006, Article 7(1)]. This notification also covers a return flight if it is booked with the same carrier [air-prm-1107-2006, Article 7(1)].\n\nIf you are traveling with an electric wheelchair, you must provide this 48-hour advance warning to the airline [air-prm-1107-2006, Annex I; air-prm-1107-2006, Annex II].\n\nIf notification is not made at least 48 hours in advance, the airport managing body is still required to make \"all reasonable efforts\" to provide the necessary assistance so that the passenger can take their flight [air-prm-1107-2006, Article 7(3)].\n\nAdditionally, to receive the assistance, the passenger must arrive at the designated point at the airport at the time stipulated by the carrier, or if no time is specified, at least one or two hours before the published departure time, depending on the specific requirements [air-prm-1107-2006, Article 7(4)]."
+  }
+}

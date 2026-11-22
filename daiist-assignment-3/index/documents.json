@@ -73,5 +73,16 @@
       "fixed": 41,
       "structure": 71
     }
+  },
+  "air-prm-1107-2006": {
+    "title": "REGULATION (EC) No 1107/2006 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL",
+    "mode": "air",
+    "file": "air-prm-1107-2006.html",
+    "sha256": "d0d5bc977fa90e5f1ea36f71bee64dc32573bdcba691474d487a9065a4c78768",
+    "added": true,
+    "chunks": {
+      "structure": 45
+    },
+    "words": 5515
   }
 }

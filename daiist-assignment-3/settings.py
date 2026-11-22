@@ -36,7 +36,8 @@ def chat_model(preferred: str) -> str:
     try:
         from google import genai
         from api_key import load_api_key
-        names = {m.name.removeprefix("models/") for m in genai.Client(api_key=load_api_key()).models.list()}
+        client = genai.Client(api_key=load_api_key())   # keep a reference: the pager needs an open client
+        names = {m.name.removeprefix("models/") for m in client.models.list()}
     except Exception as error:  # noqa: BLE001 - offline or no permission to list: just try the preferred one
         print(f"Could not list Gemini models ({type(error).__name__}); using {preferred}.", file=sys.stderr)
         return preferred

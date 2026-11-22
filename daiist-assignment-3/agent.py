@@ -40,6 +40,7 @@ from settings import GEN_MODEL, chat_model
 
 ROOT = Path(__file__).resolve().parent
 REFUSAL = "The documents I have do not cover this"
+REFUSAL_STEM = "the documents i have do not cover"
 MAX_MODEL_CALLS, MAX_SEARCHES = 8, 4
 
 
@@ -48,7 +49,9 @@ def system_prompt() -> str:
 
 
 def is_refusal(answer: str) -> bool:
-    return REFUSAL.lower() in answer.lower()[:300]
+    """Does the answer open with the refusal phrase? Models often continue it
+    ('...do not cover the specific fees...'), so match its stem, not the exact words."""
+    return REFUSAL_STEM in answer.lower()[:300]
 
 
 def check_citations(answer: str, retrieved: list[tuple[str, str]]) -> list[str]:
@@ -102,7 +105,7 @@ class Harness:
 
         from langchain_google_genai import ChatGoogleGenerativeAI
         self.model_name = chat_model(self.model_name)
-        model = ChatGoogleGenerativeAI(model=self.model_name, temperature=0, max_retries=6)
+        model = ChatGoogleGenerativeAI(model=self.model_name, temperature=0, max_retries=3, timeout=120)
         self.agent = create_agent(
             model,
             tools=self.tools,

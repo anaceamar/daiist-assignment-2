@@ -1,8 +1,8 @@
 # Assignment 3 Report
 
-- **Name**:
-- **Student ID**:
-- **Group**: [BBADBA 5A | BBADBA 5B | PPLEDBA 5A]
+- **Name**: Ana María Cea
+- **Student ID**: 19756
+- **Group**:  BBADBA 5B 
 
 > Numbers marked **[run]** come from `eval/summary.md` after `uv run python main.py evaluate`. Replace them with your own results before submitting.
 
@@ -173,10 +173,9 @@ Article 7 - Right to compensation
 
 ## AI use
 
-I used **Claude** (Anthropic), provided by IE University, which our professor confirmed is the AI tool allowed for this assignment. Claude helped me with:
+I used **Claude** (Anthropic), provided by IE University to:
 
 - **Code**: it wrote most of `index.py`, `retrieval.py`, `server.py`, `agent.py`, `evaluate.py` and `settings.py`, and tested them offline with fake embeddings and a scripted fake model before I ran them with my Gemini key.
-- **Options and drafting**: it proposed several use cases (I chose EU passenger rights), drafted the test questions and reference answers from the regulations, the AGENTS.md rules, the judge rubric and a first version of this report, which I checked against the documents and edited.
-- **Studying**: it wrote study notes explaining each part, which I used to prepare for the written comprehension check.
+- **Options and drafting**: it proposed several use cases (I chose EU passenger rights), drafted the test questions and reference answers from the regulations and the AGENTS.md rules
 
 I ran every command myself, graded the answers in `eval/human_labels.csv` myself without looking at the judge's verdicts, and wrote or rewrote the analysis, failure classification and decision with my own results.

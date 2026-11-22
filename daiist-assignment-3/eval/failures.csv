@@ -1,0 +1,19 @@
+id,kind,question,answer,correct,supported,expected_retrieved,judge_reason,cause_suggested,cause_final,notes
+q27,single,Do cruise passengers have a right to compensation for delay in arrival under Regulation 1177/2010?,"Yes, under Regulation (EU) No 1177/2010, passengers may request compensation for a delay in arrival at the final destination as set out in the transport contract [sea-1177-2010, Article 19(1)].
+
+The minimum compensation is 25% of the ticket price for delays of:
+*   1 hour for scheduled journeys up to 4 hours;
+*   2 hours for journeys between 4 and 8 hours;
+*   3 hours for journeys between 8 and 24 hours;
+*   6 hours for journeys over 24 hours [sea-1177-2010, Article 19(1)].
+
+If the delay exceeds double these times, the compensation increases to 50% of the ticket price [sea-1177-2010, Article 1",0,0,0,"The assistant failed to state that cruise passengers are excluded from the right to compensation, which makes the answer incorrect regarding the specific question asked.",retrieval miss,,
+q29,multi,A train and a ferry on a crossing scheduled for 3 hours both arrive 2.5 hours late. What minimum compensation does each owe?,"For a 3-hour scheduled journey that arrives 2.5 hours late, the compensation entitlements are as follows:
+
+### Train (Regulation (EU) 2021/782)
+You are entitled to **50% of the ticket price** [rail-2021-782, Article 19(1)(b)].
+*   Under EU rail law, a delay of 120 minutes or more entitles the passenger to 50% compensation [rail-2021-782, Article 19(1)(b)].
+
+### Ferry (Regulation (EU) No 1177/2010)
+You are entitled to **25% of the ticket price** [sea-1177-2010, Article 19(1)].
+*   For a scheduled journey of up to 4 hours, a delay of at least 1 hour entitles the passenger to 25% compensation [se",0,0,1,"The assistant incorrectly claims the ferry delay of 2.5 hours only qualifies for 25% compensation, whereas the reference and passages show that for a 3-hour journey (up to 4 hours), a delay exceeding double the 1-hour threshold (i.e. over 2 hours) entitles the passenger to 50% compensation.",wrong answer from right passage,,

@@ -1,0 +1,36 @@
+id,kind,question,answer,correct,supported,expected_retrieved,judge_reason,cause_suggested,cause_final,notes
+q27,single,Do cruise passengers have a right to compensation for delay in arrival under Regulation 1177/2010?,"Yes, under Regulation (EU) No 1177/2010, passengers may request compensation for a delay in arrival at the final destination as set out in the transport contract [sea-1177-2010, Article 19(1)].
+
+The minimum compensation is 25% of the ticket price for delays of:
+*   1 hour for scheduled journeys up to 4 hours;
+*   2 hours for journeys between 4 and 8 hours;
+*   3 hours for journeys between 8 and 24 hours;
+*   6 hours for journeys over 24 hours [sea-1177-2010, Article 19(1)].
+
+If the delay exceeds double these times, the compensation increases to 50% of the ticket price [sea-1177-2010, Article 1",0,0,0,"The assistant failed to state that cruise passengers are excluded from the right to compensation, which makes the answer incorrect regarding the specific question asked.",retrieval miss,,
+q29,multi,A train and a ferry on a crossing scheduled for 3 hours both arrive 2.5 hours late. What minimum compensation does each owe?,"For a 3-hour scheduled journey that arrives 2.5 hours late, the compensation entitlements are as follows:
+
+### Train (Regulation (EU) 2021/782)
+You are entitled to **50% of the ticket price** [rail-2021-782, Article 19(1)(b)].
+*   Under EU rail law, a delay of 120 minutes or more entitles the passenger to 50% compensation [rail-2021-782, Article 19(1)(b)].
+
+### Ferry (Regulation (EU) No 1177/2010)
+You are entitled to **25% of the ticket price** [sea-1177-2010, Article 19(1)].
+*   For a scheduled journey of up to 4 hours, a delay of at least 1 hour entitles the passenger to 25% compensation [se",0,0,1,"The assistant incorrectly claims the ferry delay of 2.5 hours only qualifies for 25% compensation, whereas the reference and passages show that for a 3-hour journey (up to 4 hours), a delay exceeding double the 1-hour threshold (i.e. over 2 hours) entitles the passenger to 50% compensation.",wrong answer from right passage,,
+q37,unanswerable,How long do passengers in Spain have to take an airline to court for delay compensation?,"The documents I have do not cover the specific time limit for taking an airline to court in Spain.
+
+Regulation (EC) No 261/2004 does not set time limits for bringing an action before national courts [air-guidelines-2024, Section 9.2]. This issue is governed by the national legislation of each Member State [air-guidelines-2024, Section 9.2]. You would need to consult Spanish national law to determine the applicable limitation period for such claims.",0,1,,"The answer correctly identifies that the question is not covered by the documents because national law applies, and every factual claim is fully supported by the provided passages.",unsupported claim,,
+q40,unanswerable,What new delay thresholds for compensation did the EU Council agree in 2025 for reforming Regulation 261/2004?,"The documents I have do not cover any 2025 reforms to Regulation 261/2004.
+
+The current rules regarding compensation for flight delays are governed by Regulation (EC) No 261/2004. Under the existing regulation, compensation is not explicitly defined for a ""delay"" in the same way it is for cancellations or denied boarding; however, the Court of Justice of the European Union has established that passengers reaching their final destination three hours or more after the scheduled arrival time may be entitled to compensation under Article 7, unless the delay was caused by extraordinary circumstance",0,1,,The answer correctly identifies that the documents do not cover 2025 reforms and accurately summarizes the existing compensation rules from the passages.,unsupported claim,,
+q41,unanswerable,What compensation does Renfe pay for AVE high-speed train delays under its own punctuality commitment?,"The documents I have do not cover the specific ""punctuality commitment"" policies of Renfe.
+
+Under EU Regulation 2021/782, which governs rail passenger rights, passengers are entitled to the following minimum compensation for delays:
+
+*   **25% of the ticket price** for a delay of 60 to 119 minutes [rail-2021-782, Article 19(1)(a)].
+*   **50% of the ticket price** for a delay of 120 minutes or more [rail-2021-782, Article 19(1)(b)].
+
+Railway undertakings may offer their own, more favorable compensation arrangements, but they must still comply with the minimum requirements set out in the Regulat",0,1,,"The answer correctly identifies that Renfe's specific internal commitments are not covered by the documents, provides the general EU legal minimums from the passages, and every factual claim is fully supported.",unsupported claim,,
+q42,unanswerable,What are a traveller's rights under the Package Travel Directive if the hotel in their package holiday is overbooked?,"The documents I have do not cover the specific rights of a traveller under the Package Travel Directive when a hotel in a package holiday is overbooked.
+
+The provided documents only clarify that the Package Travel Directive (Directive (EU) 2015/2302) grants rights to travellers that are separate from those under Regulation (EC) No 261/2004 [air-guidelines-2024, Section 2.2.7]. Furthermore, the documents note that Regulation (EC) No 261/2004 does not apply to package tours cancelled for reasons other than the flight, such as a hotel cancellation [air-261-2004, Recital 16], [air-guidelines-2024,",0,1,,The assistant correctly identified that hotel overbooking is not covered by the documents while accurately referencing the related rules and limitations present in the passages.,unsupported claim,,

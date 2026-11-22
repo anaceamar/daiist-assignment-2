@@ -198,7 +198,9 @@ def plot_hit_rates(summary: list[dict]) -> None:
 
 def run_config() -> str:
     from agent import GEN_MODEL
-    return sha((ROOT / "AGENTS.md").read_text(encoding="utf-8") + GEN_MODEL + retrieval.chosen_design())
+    # agent.py is part of the setup: a change to its guardrails re-runs the answers.
+    return sha((ROOT / "AGENTS.md").read_text(encoding="utf-8") + (ROOT / "agent.py").read_text(encoding="utf-8")
+               + GEN_MODEL + retrieval.chosen_design())
 
 
 def run_agent(questions: list[dict]) -> dict[str, dict]:
@@ -215,6 +217,7 @@ def run_agent(questions: list[dict]) -> dict[str, dict]:
     async def go():
         async with Harness(include_added=False, approve=lambda request: False) as harness:
             for i, q in enumerate(todo, 1):
+                print(f"  [{i}/{len(todo)}] {q['id']} asking ...", flush=True)
                 try:
                     trace = await harness.ask(q["question"])
                     trace.update(id=q["id"], config=config, question_hash=sha(q["question"]))
@@ -241,21 +244,22 @@ def run_agent(questions: list[dict]) -> dict[str, dict]:
 # --------------------------------------------------------------------------- 3. code checks
 
 def code_checks(q: dict, a: dict) -> dict:
+    from agent import is_refusal
     citations = [tuple(c) for c in a["citations"]]
     retrieved = [tuple(r) for r in a["retrieved"]]
     valid = all(any(retrieval.citation_matches(c, r) for r in retrieved) for c in citations)
     checks = {
-        "refused": int(a["refusal"]),
+        "refused": int(is_refusal(a["answer"])),
         "has_citation": int(bool(citations)),
         "citations_valid": int(valid),
         "guardrail_fired": int(bool(a.get("guardrail"))),
         "searches": sum(1 for c in a["tool_calls"] if c["name"] == "search"),
     }
     if q["kind"] == "unanswerable":
-        checks["refusal_ok"] = int(a["refusal"])
+        checks["refusal_ok"] = int(is_refusal(a["answer"]))
         checks["expected_retrieved"] = checks["expected_cited"] = ""
     else:
-        checks["refusal_ok"] = int(not a["refusal"])
+        checks["refusal_ok"] = int(not is_refusal(a["answer"]))
         checks["expected_retrieved"] = int(all(any(is_hit(r, [e]) for r in retrieved) for e in q["expected"]))
         checks["expected_cited"] = int(any(is_hit(c, q["expected"]) for c in citations))
     return checks
